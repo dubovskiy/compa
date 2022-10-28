@@ -1,10 +1,24 @@
 import cities from '../data/cities.json' assert {type: 'json'};
 
 const l = document.querySelector('.submitWrapper');
-alert('100');
-navigator.permissions.query({ name: 'geolocation' }).then((result) => {
-    if (result.state === 'granted') {
-        l.innerHTML = 'ok';
+
+const options = { frequency: 60, referenceFrame: "device" };
+const sensor = new AbsoluteOrientationSensor(options);
+
+sensor.addEventListener("reading", () => {
+    // model is a Three.js object instantiated elsewhere.
+    console.log(sensor);
+});
+
+Promise.all([
+    navigator.permissions.query({ name: "accelerometer" }),
+    navigator.permissions.query({ name: "magnetometer" }),
+    navigator.permissions.query({ name: "gyroscope" }),
+]).then((results) => {
+    if (results.every((result) => result.state === "granted")) {
+        sensor.start();
+    } else {
+        console.log("No permissions to use AbsoluteOrientationSensor.");
     }
 });
 
@@ -17,10 +31,10 @@ navigator.permissions.query({ name: 'geolocation' }).then((result) => {
 // });
 //
 // acl.start();
-
-let magSensor = new Magnetometer({frequency: 60});
-
-magSensor.addEventListener('reading', (e) => {
-    l.innerHTML = `Magnetic field along the X-axis ${magSensor.x} Magnetic field along the Y-axis ${magSensor.y} Magnetic field along the Z-axis ${magSensor.z}`;
-});
-magSensor.start();
+//
+// let magSensor = new Magnetometer({frequency: 60});
+//
+// magSensor.addEventListener('reading', (e) => {
+//     l.innerHTML = `Magnetic field along the X-axis ${magSensor.x} Magnetic field along the Y-axis ${magSensor.y} Magnetic field along the Z-axis ${magSensor.z}`;
+// });
+// magSensor.start();
