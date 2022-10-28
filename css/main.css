@@ -77,3 +77,11 @@ html,body{
     justify-content: center;
     align-items: center;
 }
+
+.submitWrapper button{
+    width: 80%;
+    height: 80%;
+    background-color: #990000;
+    color: #fff;
+    font-size: 100px;
+}
