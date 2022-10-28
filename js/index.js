@@ -4,7 +4,7 @@ const l = document.querySelector('.submitWrapper');
 alert('100');
 navigator.permissions.query({ name: 'geolocation' }).then((result) => {
     if (result.state === 'granted') {
-        l.innerHtml = 'ok';
+        l.innerHTML = 'ok';
     }
 });
 
