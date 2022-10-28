@@ -2,7 +2,7 @@ import cities from '../data/cities.json' assert {type: 'json'};
 
 const l = document.querySelector('.submitWrapper');
 
-navigator.permissions.query({ name:' geolocation' }).then((result) => {
+navigator.permissions.query({ name: 'geolocation' }).then((result) => {
     if (result.state === 'granted') {
         l.innerHtml = 'ok';
     }
