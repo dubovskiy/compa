@@ -66,14 +66,7 @@ html,body{
     font-size: 40px;
 }
 
-.buttonsWrapper input{
-    display: none;
-}
-
-#rocket:checked ~ .labelRocket,
-#drone:checked ~ .labelDrone,
-#plane:checked ~ .labelPlane,
-#helicopter:checked ~ .labelHelicopter{
+.active{
     background-color: #990000;
 }
 
