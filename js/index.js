@@ -1,7 +1,7 @@
 import cities from '../data/cities.json' assert {type: 'json'};
 
 const l = document.querySelector('.submitWrapper');
-
+alert('100');
 navigator.permissions.query({ name: 'geolocation' }).then((result) => {
     if (result.state === 'granted') {
         l.innerHtml = 'ok';
@@ -21,6 +21,6 @@ navigator.permissions.query({ name: 'geolocation' }).then((result) => {
 let magSensor = new Magnetometer({frequency: 60});
 
 magSensor.addEventListener('reading', (e) => {
-    l.innerHTML = `Magnetic field along the X-axis ${magSensor.x} Magnetic field along the Y-axis ${magSensor.y} Magnetic field along the Z-axis ${magSensor.z}`);
+    l.innerHTML = `Magnetic field along the X-axis ${magSensor.x} Magnetic field along the Y-axis ${magSensor.y} Magnetic field along the Z-axis ${magSensor.z}`;
 });
 magSensor.start();
