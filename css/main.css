@@ -52,7 +52,7 @@ html,body{
     justify-content: space-between;
 }
 
-.buttonsWrapper  label{
+.buttonsWrapper button{
     display: flex;
     justify-content: center;
     align-items: center;
