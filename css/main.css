@@ -7,11 +7,11 @@ html,body{
 
 .wrapper{
     height: 100%;
-    box-sizing: border-box;åç
+    box-sizing: border-box;
     width: 100%;
     margin: 0 auto;
     max-width: 600px;
-    min-height: 400px;å
+    min-height: 400px;
     min-width: 320px;
     padding: 20px;
     display: flex;
