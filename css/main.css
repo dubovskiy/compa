@@ -1,0 +1,85 @@
+html,body{
+    margin: 0 !important;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.wrapper{
+    height: 100%;
+    box-sizing: border-box;åç
+    width: 100%;
+    margin: 0 auto;
+    max-width: 600px;
+    min-height: 400px;å
+    min-width: 320px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.directionWrapper{
+    height: 50%;
+    max-height: 50%;
+}
+
+.arrow{
+    height: 20%;
+    display: flex;
+    justify-content: center;
+}
+
+.arrow > img{
+    height: 100%;
+}
+
+.compass {
+    height: 80%;
+    display: flex;
+    justify-content: center;
+}
+
+.compass > img {
+    height: 100%;
+    max-height: 100%;
+}
+
+.buttonsWrapper {
+    min-height: 80px;
+    height: 20%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.buttonsWrapper  label{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 48%;
+    min-height: 30px;
+    height: 45%;
+    margin-top: 10px;
+    color: white;
+    background-color: #000;
+    font-size: 40px;
+}
+
+.buttonsWrapper input{
+    display: none;
+}
+
+#rocket:checked ~ .labelRocket,
+#drone:checked ~ .labelDrone,
+#plane:checked ~ .labelPlane,
+#helicopter:checked ~ .labelHelicopter{
+    background-color: #990000;
+}
+
+.submitWrapper{
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
